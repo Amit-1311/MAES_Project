@@ -1,0 +1,92 @@
+#include<LiquidCrystal.h> // include the library code for lcd 
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2); //
+
+#define echopin 9 //echo pin
+
+#define trigpin 8 // Trigger pin
+
+int maximumRange = 50;
+
+long duration, distance;
+
+void setup() {
+
+
+lcd.begin(16,2);
+
+Serial.begin(9600);
+
+pinMode (trigpin, OUTPUT);
+
+pinMode (echopin, INPUT);
+
+pinMode (4, OUTPUT);
+
+pinMode (13,OUTPUT);
+
+}
+
+void loop()
+
+{
+
+{
+
+digitalWrite(trigpin,LOW);
+
+delayMicroseconds(2);
+
+digitalWrite(trigpin,HIGH); 
+
+delayMicroseconds(10);
+
+duration=pulseIn (echopin,HIGH);
+
+distance=duration/58.2;
+
+delay (50);
+
+Serial.println(distance);
+
+lcd.clear();
+
+lcd.setCursor(0,0);
+
+lcd.print("Water level :");
+
+lcd.print(distance);
+
+delay(0);
+
+}
+
+if (distance <= 5 ){
+
+digitalWrite (13,HIGH);// connect to relay(motor)
+
+digitalWrite (7,HIGH); 
+
+lcd.setCursor(0,1); 
+
+lcd.print("Tank is Full"); 
+
+delay(0);
+
+}
+
+else if (distance>=15) { 
+
+digitalWrite (7,LOW); // connect to relay(motor) 
+
+digitalWrite (13,LOW); 
+
+lcd.setCursor(0,1); 
+
+lcd.print("Motor Running");
+
+delay(0);
+
+}
+
+}

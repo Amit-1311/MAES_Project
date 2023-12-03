@@ -1,0 +1,57 @@
+int relay1 = 8;
+int relay2 = 9;
+int relay3 = 10;
+int relay4 = 11;
+char sms;
+void setup()
+{
+pinMode(relay1, OUTPUT);
+pinMode(relay2, OUTPUT);
+pinMode(relay3, OUTPUT);
+pinMode(relay4, OUTPUT);
+digitalWrite(relay1,HIGH);
+digitalWrite(relay2,HIGH);
+digitalWrite(relay3,HIGH);
+digitalWrite(relay4,HIGH);
+Serial.begin(9600);
+}
+void loop()
+{
+if(Serial.available() !=0)
+{
+  sms = Serial.read();
+}
+
+ if(sms == 'a')
+{
+  digitalWrite(relay1,LOW);
+}
+ if(sms == 'b')
+{
+  digitalWrite(relay1,HIGH);
+}
+ if(sms == 'c')
+{
+  digitalWrite(relay2,LOW);
+}
+ if(sms == 'd')
+{
+  digitalWrite(relay2,HIGH);
+}
+ if(sms == 'e')
+{
+  digitalWrite(relay3,LOW);
+}
+ if(sms == 'f')
+{
+  digitalWrite(relay3,HIGH);
+}
+ if(sms == 'g')
+{
+  digitalWrite(relay4,LOW);
+}
+ if(sms == 'h')
+{
+  digitalWrite(relay4,HIGH);
+}
+}
