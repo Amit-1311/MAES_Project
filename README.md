@@ -17,7 +17,7 @@ This project demonstrates a smart home automation system using Arduino and Bluet
 - Arduino board (e.g., Arduino Uno)
 - Relay modules for appliance control
 - Smartphone with Bluetooth capabilities
-- Various home appliances (lights, fans, etc.)
+- Various home appliances (Lights, Fans etc.)
 
 ## Setup and Usage
 
@@ -32,7 +32,7 @@ This project demonstrates a smart home automation system using Arduino and Bluet
 
 ## Contributing
 
-This is a 6-member group project. Group member’s names are mentioned at the top of the project report. If you find any issues or have ideas for improvements, please feel free to submit a pull request or open an issue.
+This is a 6-member group project. Group member’s names are mentioned at the project report. If you find any issues or have ideas for improvements, please feel free to submit a pull request or open an issue.
 
 ## Acknowledgments
 
